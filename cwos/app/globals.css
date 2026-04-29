@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-syne: 'Syne', system-ui, sans-serif;
+  --font-space-mono: 'Space Mono', monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+    background: #0a0a0f;
+    color: #eaeaf0;
+    font-family: var(--font-syne);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0d14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e1e2e;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6c5cff;
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(108, 92, 255, 0.3);
+    color: #eaeaf0;
+  }
+}
+
+@layer utilities {
+  /* Custom bg opacities not covered by Tailwind */
+  .bg-accent\/8  { background-color: rgba(0, 255, 163, 0.08); }
+  .bg-accent\/12 { background-color: rgba(0, 255, 163, 0.12); }
+  .bg-accent2\/8 { background-color: rgba(108, 92, 255, 0.08); }
+
+  /* Number font */
+  .font-num { font-family: var(--font-space-mono); }
+
+  /* Glow text */
+  .text-glow-green {
+    text-shadow: 0 0 20px rgba(0, 255, 163, 0.4);
+  }
+  .text-glow-purple {
+    text-shadow: 0 0 20px rgba(108, 92, 255, 0.4);
+  }
+}
